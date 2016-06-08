@@ -1,0 +1,2298 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4"
+     xml:base="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Directions -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Directions">
+        <owl:equivalentClass>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>ToLeft</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>ToRight</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:equivalentClass>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#has"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasBoost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasBoost">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isBoostOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasBoost"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Boost"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasColor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasColor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isColorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasColor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasColor"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Color"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasCount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasCount">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isCountOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasCount"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Count"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasDescription -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasDescription">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isDescriptionOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasHandPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasHandPosition">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isHandPositionOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasHandPosition"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pointsman"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasLicensePlate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasLicensePlate">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLicensePlateOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasLicensePlate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LicensePlate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasLocality -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasLocality">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLocalityOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasLocality"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasName">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lane"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasNumber -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasNumber">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNumberOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Marking"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasNumber"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Number"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPedestrian -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPedestrian">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPedestrianOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPedestrian"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPedestrian"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pass"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPriority -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPriority">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPriorityOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasPriority"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priorities"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasProcess -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasProcess">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isProcessOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasProcess"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasProcess"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Rule"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelativeDirection -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelativeDirection">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelativeDirectionOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelativeDirection"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRelativeDirection"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRoad -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRoad">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRoadOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasRoad"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSignal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSignal">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSignalOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSignal"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Beep"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSignal"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSituation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSituation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSituationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSituation"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Rule"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSpeed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSpeed">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSpeedOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSpeed"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Speed"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Distance"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Follow"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasSubject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priority"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTime">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTimeOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTrafficLight -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTrafficLight">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTrafficLightOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTrafficLight"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Blinking"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Backing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Beep"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direct"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pass"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Stop"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turnaround"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direction"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#GiveWay"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasTransport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Passing"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasValue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isValueOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Distance"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasVisibility -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasVisibility">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isVisibilityOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasVisibility"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasWeight -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasWeight">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isWeightOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#hasWeight"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Weight"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isBoostOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isBoostOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Boost"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isBoostOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isColorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isColorOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Color"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isColorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isColorOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isCountOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isCountOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Count"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isCountOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isDescriptionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isDescriptionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Description"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isDescriptionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isDescriptionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isHandPositionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isHandPositionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isHandPositionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pointsman"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLicensePlateOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLicensePlateOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LicensePlate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLicensePlateOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLocalityOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLocalityOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isLocalityOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Name"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lane"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNameOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNumberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNumberOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Number"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNumberOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNumberOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Marking"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isNumberOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPedestrianOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPedestrianOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPedestrianOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPedestrianOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pass"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPriorityOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPriorityOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priorities"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isPriorityOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isProcessOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isProcessOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isProcessOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isProcessOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelativeDirectionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelativeDirectionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelativeDirectionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRelativeDirectionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRoadOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRoadOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isRoadOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSignalOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSignalOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSignalOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Beep"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSignalOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSituationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSituationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSituationOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Rule"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSpeedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSpeedOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Speed"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSpeedOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Distance"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Follow"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isSubjectOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priority"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTimeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTimeOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTimeOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTrafficLightOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTrafficLightOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTrafficLightOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Blinking"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Backing"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Beep"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direct"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pass"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Stop"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turnaround"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direction"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#GiveWay"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isTransportOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Passing"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isValueOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isValueOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Value"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isValueOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Distance"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isValueOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isVisibilityOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isVisibilityOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isVisibilityOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isWeightOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isWeightOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Weight"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#isWeightOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Boost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Boost">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Color -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Color">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Count -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Count">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LicensePlate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LicensePlate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Name">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Number">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Place -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Place"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Directions"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Speed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Speed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Value">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Weight">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Backing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Backing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Задний_ход</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Beep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Beep">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Blinking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Blinking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Мигание</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bridge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+        <rdfs:label>Мост</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bright -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bright">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Bus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        <rdfs:label>Автобус</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        <rdfs:label>Автомобиль</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ChangeLane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Перестроиться</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Переход</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Crossroad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Crossroad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Перекресток</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Crosswalk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Crosswalk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Пешеходный_переход</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Dark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Dark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Прямо</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Direction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+        <rdfs:label>Направление</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Distance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Distance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+        <rdfs:label>Расстояние</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Окружение</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ExtendedForward -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ExtendedForward">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ExtendedSideways -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ExtendedSideways">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Follow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Follow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+        <rdfs:label>Следование</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#GiveWay -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#GiveWay">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Уступить</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Good -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Good">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Справочник</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Highway -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Highway">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+        <rdfs:label>Трасса</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#InLocality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#InLocality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Полоса</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LeftSignal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LeftSignal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LiftedUp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LiftedUp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LivingSector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#LivingSector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lowered -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lowered">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#HandPosition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Main -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Main">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priorities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Marking -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Marking">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Разметка</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Middle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Middle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Nightfall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Nightfall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Normal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Normal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+        <rdfs:label>Обычная</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#OutLocality -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#OutLocality">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Locality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Пропустить</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Passing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Passing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Обгон</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Пешеход</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pointsman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pointsman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Регулировщик</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+        <rdfs:label>Положение</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priorities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priorities">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priority -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priority">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process">
+        <rdfs:label>Процесс</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#PublicStop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#PublicStop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Остановка_траспорта</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation">
+        <rdfs:label>Отношение</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RightSignal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RightSignal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Дорога</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Rule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Rule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Relation"/>
+        <rdfs:label>Правило</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Secondary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Secondary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Priorities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Знак</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation">
+        <rdfs:label>Ситуация</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#SpecialSignal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#SpecialSignal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Signals"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Stop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Stop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Остановка</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject">
+        <rdfs:label>Предмет</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ToLeft -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ToLeft">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ToRight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#ToRight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#RelativeDirection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Светофор</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Tram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Tram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        <rdfs:label>Трамвай</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Subject"/>
+        <rdfs:label>Транспорт</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Trolleybus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Trolleybus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        <rdfs:label>Троллейбус</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Truck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Truck">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        <rdfs:label>Грузовик</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Tunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Tunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+        <rdfs:label>Туннель</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Поворот</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turnaround -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turnaround">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Process"/>
+        <rdfs:label>Разворот</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Visibility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Enums"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Cross"/>
+        <untitled-ontology-4:hasPedestrian rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian1"/>
+        <untitled-ontology-4:hasRoad rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road1"/>
+        <untitled-ontology-4:Place>На</untitled-ontology-4:Place>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2"/>
+        <untitled-ontology-4:Place>На</untitled-ontology-4:Place>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2"/>
+        <untitled-ontology-4:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</untitled-ontology-4:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Position"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2"/>
+        <untitled-ontology-4:Value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">270</untitled-ontology-4:Value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Normal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Normal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Situation"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road1"/>
+        <untitled-ontology-4:hasSubject rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Turn"/>
+        <untitled-ontology-4:hasTransport rdf:resource="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Car1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Crossroad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Crosswalk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Environment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Handbook"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Lane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Marking"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pedestrian"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Pointsman"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#PublicStop"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Road"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Sign"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#TrafficLight"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alex/ontologies/2016/4/untitled-ontology-4#Transport"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.3.20160319-0906) https://github.com/owlcs/owlapi -->
+

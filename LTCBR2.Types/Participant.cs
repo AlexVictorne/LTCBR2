@@ -17,5 +17,10 @@ namespace LTCBR2.Types
         public List<Attribute> attributes;
         [BsonElement]
         public List<int> connections;
+
+        public override string ToString()
+        {
+            return name.ToString();
+        }
     }
 }

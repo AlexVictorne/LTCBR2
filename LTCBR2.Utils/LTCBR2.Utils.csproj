@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GraphWorker.cs" />
+    <Compile Include="ImportFromConstructor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SituationGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -54,6 +57,10 @@
     <ProjectReference Include="..\LTCBR2.Types\LTCBR2.Types.csproj">
       <Project>{f27b68b6-11c1-4a78-aa09-00be075d7c47}</Project>
       <Name>LTCBR2.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RAXY.Situation\RAXY.Situation.csproj">
+      <Project>{b02ebef3-3875-4667-8aa0-7e1eaf8569d3}</Project>
+      <Name>RAXY.Situation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

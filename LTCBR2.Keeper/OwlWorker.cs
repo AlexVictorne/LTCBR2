@@ -10,7 +10,7 @@ using Attribute = LTCBR2.Types.Attribute;
 
 namespace LTCBR2.Keeper
 {
-    public class OwlWorker
+    static public class OwlWorker
     {
 
         public class AbstractClass
@@ -34,14 +34,12 @@ namespace LTCBR2.Keeper
             public List<string> possibleValues = new List<string>();
         }
 
+        static public List<Situation> currentSituationBaseFromOwl = new List<Situation>();
 
-        public List<AbstractClass> LoadOntologyModel(string filename)
+        static public List<AbstractClass> LoadOntologyModel(XmlDocument xml)
         {
             var classModel = new List<AbstractClass>();
-
-            XmlDocument xml = new XmlDocument();
-            xml.Load(filename);
-
+            
             var classList = xml.SelectNodes("//*[local-name()='Declaration']//*[local-name()='Class']");
             var dataPropertyDomainList = xml.SelectNodes("//*[local-name()='DataPropertyDomain']");
             var dataPropertyRangeList = xml.SelectNodes("//*[local-name()='DataPropertyRange']");
@@ -143,13 +141,10 @@ namespace LTCBR2.Keeper
             return classModel;
         }
 
-        public List<Situation> LoadIndividuals(string filename)
+        static public void LoadIndividuals(XmlDocument xml)
         {
             var individuals = new List<Situation>();
-
-            XmlDocument xml = new XmlDocument();
-            xml.Load(filename);
-
+            
             var classAsIndList = xml.SelectNodes("//*[local-name()='ClassAssertion']");
             var dataPropertyAsIndList = xml.SelectNodes("//*[local-name()='DataPropertyAssertion']");
             var objectPropertyAsIndList = xml.SelectNodes("//*[local-name()='ObjectPropertyAssertion']");
@@ -161,7 +156,6 @@ namespace LTCBR2.Keeper
                     var newSituation = new Situation();
                     newSituation.id = newSituation.GetHashCode();
                     newSituation.create_date = DateTime.Now;
-                    newSituation.solution
                     for (var j = 0; j < dataPropertyAsIndList.Count; j++)
                     {
                         if (dataPropertyAsIndList[j].ChildNodes[1].Attributes["IRI"].Value ==
@@ -188,6 +182,14 @@ namespace LTCBR2.Keeper
                             idCounter++;
                             newParticipant.name = objectPropertyAsIndList[j].ChildNodes[2].Attributes["IRI"].Value;
                             //newParticipant.className;
+                            for (var k = 0; k < classAsIndList.Count; k++)
+                            {
+                                if (objectPropertyAsIndList[j].ChildNodes[2].Attributes["IRI"].Value==
+                                    classAsIndList[k].ChildNodes[1].Attributes["IRI"].Value)
+                                {
+                                    newParticipant.className = classAsIndList[k].ChildNodes[0].Attributes["IRI"].Value;
+                                }
+                            }
                             newParticipant.purpose = objectPropertyAsIndList[j].ChildNodes[0].Attributes["IRI"].Value.Remove(0,4);
                             //добавить аттрибуты
                             newParticipant.attributes = new List<Attribute>();
@@ -201,9 +203,50 @@ namespace LTCBR2.Keeper
                                     newAttribute.value = dataPropertyAsIndList[k].ChildNodes[2].InnerText;
                                     newParticipant.attributes.Add(newAttribute);
                                 }
-
                             }
                             newSituation.participants.Add(newParticipant);
+                        }
+                        else if (objectPropertyAsIndList[j].ChildNodes[2].Attributes["IRI"].Value ==
+                            classAsIndList[i].ChildNodes[1].Attributes["IRI"].Value)
+                        {
+                            for (var k = 0; k < objectPropertyAsIndList.Count; k++)
+                            {
+                                if ((objectPropertyAsIndList[j].ChildNodes[1].Attributes["IRI"].Value ==
+                                     objectPropertyAsIndList[k].ChildNodes[1].Attributes["IRI"].Value) &&
+                                    (objectPropertyAsIndList[k].ChildNodes[2].Attributes["IRI"].Value !=
+                                     objectPropertyAsIndList[j].ChildNodes[2].Attributes["IRI"].Value))
+                                {
+                                    var solution = new Participant {id = idCounter};
+                                    idCounter++;
+                                    solution.name = objectPropertyAsIndList[k].ChildNodes[2].Attributes["IRI"].Value;
+                                    solution.connections = new List<int>();
+                                    solution.purpose = objectPropertyAsIndList[k].ChildNodes[0].Attributes["IRI"].Value.Remove(0, 4);
+                                    //newParticipant.className;
+                                    for (var l = 0; l < classAsIndList.Count; l++)
+                                    {
+                                        if (objectPropertyAsIndList[k].ChildNodes[2].Attributes["IRI"].Value ==
+                                            classAsIndList[l].ChildNodes[1].Attributes["IRI"].Value)
+                                        {
+                                            solution.className = classAsIndList[l].ChildNodes[0].Attributes["IRI"].Value;
+                                        }
+                                    }
+
+                                    //добавить аттрибуты
+                                    solution.attributes = new List<Attribute>();
+                                    for (var l = 0; l < dataPropertyAsIndList.Count; l++)
+                                    {
+                                        if (dataPropertyAsIndList[l].ChildNodes[1].Attributes["IRI"].Value ==
+                                            objectPropertyAsIndList[k].ChildNodes[2].Attributes["IRI"].Value)
+                                        {
+                                            var newAttribute = new Attribute();
+                                            newAttribute.name = dataPropertyAsIndList[l].ChildNodes[0].Attributes["IRI"].Value;
+                                            newAttribute.value = dataPropertyAsIndList[l].ChildNodes[2].InnerText;
+                                            solution.attributes.Add(newAttribute);
+                                        }
+                                    }
+                                    newSituation.solutionInParticipant = solution;
+                                }
+                            }
                         }
                     }
                     individuals.Add(newSituation);
@@ -232,14 +275,35 @@ namespace LTCBR2.Keeper
                                     participant2.connections.Add(participant.id);
                                 }
                             }
+                        }
 
+                    }
+                }
+                for (var i = 0; i < objectPropertyAsIndList.Count; i++)
+                {
+                    if (individ.solutionInParticipant.name ==
+                        objectPropertyAsIndList[i].ChildNodes[1].Attributes["IRI"].Value)
+                    {
+                        foreach (var participant2 in individ.participants)
+                        {
+                            if (participant2.name ==
+                                objectPropertyAsIndList[i].ChildNodes[2].Attributes["IRI"].Value)
+                            {
+                                if (participant2.connections == null)
+                                    participant2.connections = new List<int>();
+                                individ.solutionInParticipant.connections.Add(participant2.id);
+                            }
                         }
                     }
                 }
             }
-            return individuals;
+            currentSituationBaseFromOwl.Clear();
+            currentSituationBaseFromOwl.AddRange(individuals);
         }
 
-
+        static public Situation GetSituation(int id)
+        {
+            return currentSituationBaseFromOwl.Find(x => x.id == id);
+        }
     }
 }

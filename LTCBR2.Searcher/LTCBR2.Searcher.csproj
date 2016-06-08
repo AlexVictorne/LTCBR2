@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GpuWorker.cs" />
     <Compile Include="HanserSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SituationSearcher.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LTCBR2.Gpu\LTCBR2.Gpu.vcxproj">
+      <Project>{4b95e1fa-ced5-42bc-9c01-076a6abb3b64}</Project>
+      <Name>LTCBR2.Gpu</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LTCBR2.Types\LTCBR2.Types.csproj">
       <Project>{F27B68B6-11C1-4A78-AA09-00BE075D7C47}</Project>
       <Name>LTCBR2.Types</Name>

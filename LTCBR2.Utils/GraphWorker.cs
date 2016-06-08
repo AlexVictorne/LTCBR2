@@ -47,7 +47,7 @@ namespace LTCBR2.Utils
             {
                 graphInString = graphInString.Remove(0, graphInString.IndexOf("node", StringComparison.Ordinal)+4);
                 graphInString = graphInString.Remove(0, graphInString.IndexOf(" ", StringComparison.Ordinal)+1);
-                var id = Convert.ToInt16(graphInString.Substring(0, graphInString.IndexOf(" ", StringComparison.Ordinal) + 1));
+                var id = Convert.ToInt32(graphInString.Substring(0, graphInString.IndexOf(" ", StringComparison.Ordinal) + 1));
                 graphInString = graphInString.Remove(0, graphInString.IndexOf(" ", StringComparison.Ordinal)+1);
                 var i = Convert.ToDouble(graphInString.Substring(0, graphInString.IndexOf(" ", StringComparison.Ordinal)));
                 graphInString = graphInString.Remove(0, graphInString.IndexOf(" ", StringComparison.Ordinal)+1);
@@ -60,7 +60,7 @@ namespace LTCBR2.Utils
                 };
                 lc.Add(coordinate);
             }
-            situation.coordinates.Clear();
+            situation.coordinates = new List<Coordinate>();
             situation.coordinates = lc;
             return situation;
         }

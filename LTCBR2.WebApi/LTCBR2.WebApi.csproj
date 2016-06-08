@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -148,6 +149,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\OntologyController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SituationsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -172,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LTCBR2.Keeper\LTCBR2.Keeper.csproj">
@@ -185,6 +188,10 @@
     <ProjectReference Include="..\LTCBR2.Types\LTCBR2.Types.csproj">
       <Project>{F27B68B6-11C1-4A78-AA09-00BE075D7C47}</Project>
       <Name>LTCBR2.Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LTCBR2.Utils\LTCBR2.Utils.csproj">
+      <Project>{44F7A696-C648-4F62-BBD4-321132E10DEF}</Project>
+      <Name>LTCBR2.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

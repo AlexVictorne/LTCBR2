@@ -19,6 +19,9 @@ namespace LTCBR2.Types
         [BsonElement]
         public string solution { get; set; }
         [BsonElement]
+        public Participant solutionInParticipant { get; set; }
+
+        [BsonElement]
         public double rate { get; set; }
 
 
