@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace LTCBR2.Tests
 {
     [TestClass]
-    public class UnitTest2
+    public class OwlTests
     {
         [TestMethod]
         public void TestMethod1()
@@ -15,7 +15,9 @@ namespace LTCBR2.Tests
             XmlDocument xml = new XmlDocument();
             xml.Load(@"C:\Users\Рябов\Desktop\dts.owl");
             OwlWorker.LoadIndividuals(xml);
-            var classes = OwlWorker.LoadOntologyModel(xml).Where(x=>x.parent=="#Subject");
+            var subject = OwlWorker.LoadOntologyModel(xml).Where(x=>x.Purpose=="Subject");
+            var process = OwlWorker.LoadOntologyModel(xml).Where(x => x.Purpose == "Process");
+            var relation = OwlWorker.LoadOntologyModel(xml).Where(x => x.Purpose == "Relation");
         }
     }
 }

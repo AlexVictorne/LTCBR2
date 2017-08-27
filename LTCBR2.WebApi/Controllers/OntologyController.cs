@@ -9,16 +9,17 @@ using System.Web;
 using System.Web.Http;
 using System.Xml;
 using LTCBR2.Keeper;
+using LTCBR2.Types.ForOntology;
 
 namespace LTCBR2.WebApi.Controllers
 {
     public class OntologyController : ApiController
     {
-        public async Task<IHttpActionResult> Post()
+        public async Task<IEnumerable<AbstractClass>> Post()
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
-                return BadRequest();
+                //return;
             }
             
             var provider = new MultipartMemoryStreamProvider();
@@ -33,6 +34,8 @@ namespace LTCBR2.WebApi.Controllers
                 XmlDocument xml = new XmlDocument();
                 xml.LoadXml(owlString.Result);
                 OwlWorker.LoadIndividuals(xml);
+                var result = OwlWorker.LoadOntologyModel(xml).ToList();
+                return result;
                 //byte[] fileArray = await file.ReadAsByteArrayAsync();
 
                 //using (System.IO.FileStream fs = new System.IO.FileStream(root + filename, System.IO.FileMode.Create))
@@ -40,7 +43,8 @@ namespace LTCBR2.WebApi.Controllers
                 //    await fs.WriteAsync(fileArray, 0, fileArray.Length);
                 //}
             }
-            return Ok("Read success");
+            return null;
+            //return Ok("Read success");
         }
     }
 }

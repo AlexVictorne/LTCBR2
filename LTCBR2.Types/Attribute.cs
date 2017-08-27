@@ -1,7 +1,9 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace LTCBR2.Types
 {
+    [Serializable]
     public class Attribute
     {
         [BsonElement]

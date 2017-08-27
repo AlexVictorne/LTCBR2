@@ -6,15 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LTCBR2.Searcher.Tests
+namespace LTCBR2.Tests
 {
     [TestClass()]
     public class GpuWorkerTests
     {
         [TestMethod()]
-        public void GpuWorkerTest()
+        public void GetListOfDevicesTest()
         {
-            GpuWorker gp = new GpuWorker();
+            GpuWorker gw = new GpuWorker();
+            gw.GetListOfDevices();
+            Assert.Fail();
         }
     }
 }

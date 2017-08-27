@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
 using LTCBR2.Types;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -56,6 +57,23 @@ namespace LTCBR2.Keeper
                 }
             }
             return sitList;
+        }
+
+        public async Task<List<Situation>> SelectByFilter(string fieldName, string valueName, string fieldType,
+            string valueType, string fieldDate, DateTime valueDate)
+        {
+            //var sitList = new List<Situation>();
+            var collection = this._database.GetCollection<Situation>("Situations");
+            var filter = Builders<Situation>.Filter.Empty;
+            if ((fieldName != "") && (valueName != ""))
+                filter = Builders<Situation>.Filter.Eq(fieldName, valueName);
+            if ((fieldType != "") && (valueType != ""))
+                filter = filter & Builders<Situation>.Filter.Eq(fieldType, valueType);
+            if (fieldDate != "")
+                filter = filter & Builders<Situation>.Filter.Eq(fieldDate, valueDate);
+
+            var resultList = await collection.Find(filter).ToListAsync();
+            return resultList;
         }
 
         #endregion

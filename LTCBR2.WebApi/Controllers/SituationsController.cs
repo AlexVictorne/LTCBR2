@@ -32,18 +32,31 @@ namespace LTCBR2.WebApi.Controllers
 
         //get bundle by filter
         [HttpPost]
-        public IEnumerable<liteBundleElement> GetAllSituations([FromBody]Filter filter)
+        public async Task<IEnumerable<liteBundleElement>> GetAllSituations([FromBody]Filter filter)
         {
             List<Situation> bundle;
+           
             if (filter.sourceType)
             {
-                bundle = OwlWorker.currentSituationBaseFromOwl;
+                bundle = OwlWorker.CurrentSituationBaseFromOwl;
             }
             else
             {
                 var noSqlWorker = new NoSqlWorker();
                 noSqlWorker.Initialization();
-                bundle = noSqlWorker.Select();
+                var name = filter.name != "" ? "name" : "";
+                var type = filter.type != "" ? "type" : "";
+                var date = filter.date != "" ? "create_date" : "";
+                DateTime dateIn;
+                if (DateTime.TryParse(filter.date, out dateIn))
+                {
+                    DateTime.TryParse(filter.date, out dateIn);
+                    bundle = await noSqlWorker.SelectByFilter(name, filter.name, type, filter.type, date, dateIn);
+                }
+                else
+                {
+                    bundle = await noSqlWorker.SelectByFilter(name, filter.name, type, filter.type, date,DateTime.Now);
+                }
             }
             var liteBundle = bundle.Select(situation => new liteBundleElement
             {
@@ -54,6 +67,9 @@ namespace LTCBR2.WebApi.Controllers
             }).ToList();
             return liteBundle;
         }
+
+
+
 
         //remove from bundle by id
 
@@ -101,6 +117,7 @@ namespace LTCBR2.WebApi.Controllers
             var newSituation = situation;
             newSituation.create_date = DateTime.Today;
             newSituation.id = newSituation.GetHashCode();
+            newSituation = Tools.ValidateSituation(newSituation);
             var noSqlWorker = new NoSqlWorker();
             noSqlWorker.Initialization();
             noSqlWorker.Insert(newSituation);

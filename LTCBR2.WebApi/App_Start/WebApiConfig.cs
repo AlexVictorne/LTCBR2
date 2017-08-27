@@ -24,6 +24,7 @@ namespace LTCBR2.WebApi
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            ((Newtonsoft.Json.Serialization.DefaultContractResolver)config.Formatters.JsonFormatter.SerializerSettings.ContractResolver).IgnoreSerializableAttribute = true;
             //var cors = new EnableCorsAttribute("*", "*", "*");
             //config.EnableCors(cors);
         }

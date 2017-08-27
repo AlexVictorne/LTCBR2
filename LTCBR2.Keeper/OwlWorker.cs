@@ -1,42 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Xml;
-using System.Xml.Linq;
-using System.Xml.Resolvers;
 using LTCBR2.Types;
+using LTCBR2.Types.ForOntology;
 using Attribute = LTCBR2.Types.Attribute;
 
 namespace LTCBR2.Keeper
 {
-    static public class OwlWorker
+    public static class OwlWorker
     {
 
-        public class AbstractClass
+        public static List<Situation> CurrentSituationBaseFromOwl = new List<Situation>();
+
+        public static string ToNormal(string inString)
         {
-            public string name;
-            public string parent;
-            public List<DataProperty> attributes = new List<DataProperty>();
-            public List<ObjectProperty> connections = new List<ObjectProperty>();
+            return inString.Replace("#", "");
         }
 
-
-        public class ObjectProperty
-        {
-            public string name;
-            public string count; //0-some
-        }
-
-        public class DataProperty
-        {
-            public string name;
-            public List<string> possibleValues = new List<string>();
-        }
-
-        static public List<Situation> currentSituationBaseFromOwl = new List<Situation>();
-
-        static public List<AbstractClass> LoadOntologyModel(XmlDocument xml)
+        public static List<AbstractClass> LoadOntologyModel(XmlDocument xml)
         {
             var classModel = new List<AbstractClass>();
             
@@ -53,72 +34,72 @@ namespace LTCBR2.Keeper
             for (var i = 0; i < classList.Count; i++)
             {
                 var newClass = new AbstractClass();
-                newClass.name = classList[i].Attributes?["IRI"].Value;
+                newClass.Name = ToNormal(classList[i].Attributes?["IRI"].Value);
 
                 for (var j = 0; j < subclassList.Count; j++)
                 {
-                    if (subclassList[j].ChildNodes[0].Attributes?["IRI"].Value == newClass.name)
+                    if (ToNormal(subclassList[j].ChildNodes[0].Attributes?["IRI"].Value) == newClass.Name)
                     {
-                        newClass.parent = subclassList[j].ChildNodes[1].Attributes?["IRI"].Value;
+                        newClass.Parent = ToNormal(subclassList[j].ChildNodes[1].Attributes?["IRI"].Value);
                     }
                 }
 
                 for (var j = 0; j < dataPropertyDomainList.Count; j++)
                 {
-                    if (dataPropertyDomainList[j].ChildNodes[1].Attributes?["IRI"].Value == newClass.name)
+                    if (ToNormal(dataPropertyDomainList[j].ChildNodes[1].Attributes?["IRI"].Value) == newClass.Name)
                     {
                         var newAttribute = new DataProperty();
-                        newAttribute.name = dataPropertyDomainList[j].ChildNodes[0].Attributes?["IRI"].Value;
+                        newAttribute.Name = ToNormal(dataPropertyDomainList[j].ChildNodes[0].Attributes?["IRI"].Value);
                         for (var k = 0; k < dataPropertyRangeList.Count; k++)
                         {
-                            if (dataPropertyRangeList[k].ChildNodes[0].Attributes?["IRI"].Value == newAttribute.name)
+                            if (ToNormal(dataPropertyRangeList[k].ChildNodes[0].Attributes?["IRI"].Value) == newAttribute.Name)
                             {
                                 var possibleValues = new List<string>();
                                 if (dataPropertyRangeList[k].ChildNodes[1].Name == "Datatype")
                                 {
                                     possibleValues.Add(
-                                        dataPropertyRangeList[k].ChildNodes[1].Attributes?["abbreviatedIRI"].Value);
+                                        ToNormal(dataPropertyRangeList[k].ChildNodes[1].Attributes?["abbreviatedIRI"].Value));
                                 }
                                 else
                                 {
                                     for (var l = 0; l < dataPropertyRangeList[k].ChildNodes[1].ChildNodes.Count; l++)
                                     {
                                         possibleValues.Add(
-                                            dataPropertyRangeList[k].ChildNodes[1].ChildNodes[l].InnerText);
+                                            ToNormal(dataPropertyRangeList[k].ChildNodes[1].ChildNodes[l].InnerText));
                                     }
                                 }
-                                newAttribute.possibleValues.AddRange(possibleValues);
+                                newAttribute.PossibleValues.AddRange(possibleValues);
                             }
                         }
-                        newClass.attributes.Add(newAttribute);
+                        newClass.Attributes.Add(newAttribute);
                     }
                 }
 
                 for (var j = 0; j < objectPropertyDomainList.Count; j++)
                 {
-                    if (objectPropertyDomainList[j].ChildNodes[1].ChildNodes[1].Attributes?["IRI"].Value ==
-                        newClass.name)
+                    if (ToNormal(objectPropertyDomainList[j].ChildNodes[1].ChildNodes[1].Attributes?["IRI"].Value) ==
+                        newClass.Name)
                     {
                         var newConnection = new ObjectProperty();
                         for (var k = 0; k < objectPropertyRangeList.Count; k++)
                         {
-                            if (objectPropertyRangeList[k].ChildNodes[0].Attributes?["IRI"].Value ==
-                                objectPropertyDomainList[j].ChildNodes[0].Attributes?["IRI"].Value)
+                            if (ToNormal(objectPropertyRangeList[k].ChildNodes[0].Attributes?["IRI"].Value) ==
+                                ToNormal(objectPropertyDomainList[j].ChildNodes[0].Attributes?["IRI"].Value))
                             {
-                                newConnection.name = objectPropertyRangeList[k].ChildNodes[1].Attributes?["IRI"].Value;
+                                newConnection.Name = ToNormal(objectPropertyRangeList[k].ChildNodes[1].Attributes?["IRI"].Value);
                             }
                         }
                         switch (objectPropertyDomainList[j].ChildNodes[1].Name)
                         {
                             case "ObjectExactCardinality":
-                                newConnection.count =
+                                newConnection.Count =
                                     objectPropertyDomainList[j].ChildNodes[1].Attributes?["cardinality"].Value;
                                 break;
                             case "ObjectSomeValuesFrom":
-                                newConnection.count = "0";
+                                newConnection.Count = "0";
                                 break;
                         }
-                        newClass.connections.Add(newConnection);
+                        newClass.Connections.Add(newConnection);
                     }
                 }
 
@@ -130,18 +111,34 @@ namespace LTCBR2.Keeper
             {
                 foreach (var childModel in classModel)
                 {
-                    if (childModel.parent == parentModel.name)
+                    if (childModel.Parent == parentModel.Name)
                     {
-                        childModel.attributes.AddRange(parentModel.attributes);
-                        childModel.connections.AddRange(parentModel.connections);
+                        childModel.Attributes.AddRange(parentModel.Attributes);
+                        childModel.Connections.AddRange(parentModel.Connections);
                     }
                 }
             }
-
+            foreach (var purpose in new List<string>{"Subject","Process","Relation"})
+            {
+                foreach (var klass in classModel)
+                {
+                    if (klass.Parent == purpose)
+                    {
+                        klass.Purpose = purpose;
+                        foreach (var subKlass in classModel)
+                        {
+                            if (subKlass.Parent == klass.Name)
+                            {
+                                subKlass.Purpose = purpose;
+                            }
+                        }
+                    }
+                }
+            }
             return classModel;
         }
 
-        static public void LoadIndividuals(XmlDocument xml)
+        public static void LoadIndividuals(XmlDocument xml)
         {
             var individuals = new List<Situation>();
             
@@ -297,13 +294,13 @@ namespace LTCBR2.Keeper
                     }
                 }
             }
-            currentSituationBaseFromOwl.Clear();
-            currentSituationBaseFromOwl.AddRange(individuals);
+            CurrentSituationBaseFromOwl.Clear();
+            CurrentSituationBaseFromOwl.AddRange(individuals);
         }
 
-        static public Situation GetSituation(int id)
+        public static Situation GetSituation(int id)
         {
-            return currentSituationBaseFromOwl.Find(x => x.id == id);
+            return CurrentSituationBaseFromOwl.Find(x => x.id == id);
         }
     }
 }

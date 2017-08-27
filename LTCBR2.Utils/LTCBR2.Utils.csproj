@@ -49,11 +49,17 @@
     <Compile Include="ImportFromConstructor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SituationGenerator.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="XmlWorker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LTCBR2.Keeper\LTCBR2.Keeper.csproj">
+      <Project>{59D3DD60-A05E-46C5-8F30-284615779694}</Project>
+      <Name>LTCBR2.Keeper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LTCBR2.Types\LTCBR2.Types.csproj">
       <Project>{f27b68b6-11c1-4a78-aa09-00be075d7c47}</Project>
       <Name>LTCBR2.Types</Name>

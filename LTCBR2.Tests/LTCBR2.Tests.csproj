@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,9 +55,13 @@
     <Compile Include="GpuWorkerTests.cs" />
     <Compile Include="GraphWorkerTests.cs" />
     <Compile Include="ImportFromConstructorTests.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="NoSqlWorkerTests.cs" />
+    <Compile Include="SituationGeneratorTests.cs" />
+    <Compile Include="SituationSearcherTests.cs" />
+    <Compile Include="ToolsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest2.cs" />
+    <Compile Include="OwlTests.cs" />
+    <Compile Include="AmpTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LTCBR2.Keeper\LTCBR2.Keeper.csproj">

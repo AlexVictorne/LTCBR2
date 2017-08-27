@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AMP", "AMP\AMP.vcxproj", "{1A69841B-A3C8-46E1-8D60-D398847553DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMP.Tests", "AMP.Tests\AMP.Tests.csproj", "{DE611E24-0250-4C95-9C10-1E269893C57D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A69841B-A3C8-46E1-8D60-D398847553DD} = {1A69841B-A3C8-46E1-8D60-D398847553DD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMP.WrapperForCLR", "AMP.WrapperForCLR\AMP.WrapperForCLR.csproj", "{D5E89A7C-2706-4B93-AD80-B29B6521485A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A69841B-A3C8-46E1-8D60-D398847553DD} = {1A69841B-A3C8-46E1-8D60-D398847553DD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoiseDesigner.DataExchange", "D:\NoiseDesigner\NoiseDesigner.DataExchange\NoiseDesigner.DataExchange.csproj", "{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Debug|Any CPU.Build.0 = Debug|Win32
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Debug|x64.ActiveCfg = Debug|x64
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Debug|x64.Build.0 = Debug|x64
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Debug|x86.ActiveCfg = Debug|Win32
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Debug|x86.Build.0 = Debug|Win32
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Release|Any CPU.ActiveCfg = Release|Win32
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Release|x64.ActiveCfg = Release|x64
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Release|x64.Build.0 = Release|x64
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Release|x86.ActiveCfg = Release|Win32
+		{1A69841B-A3C8-46E1-8D60-D398847553DD}.Release|x86.Build.0 = Release|Win32
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Debug|x64.Build.0 = Debug|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Release|x64.ActiveCfg = Release|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Release|x64.Build.0 = Release|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE611E24-0250-4C95-9C10-1E269893C57D}.Release|x86.Build.0 = Release|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Debug|x64.Build.0 = Debug|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Debug|x86.Build.0 = Debug|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Release|x64.Build.0 = Release|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5E89A7C-2706-4B93-AD80-B29B6521485A}.Release|x86.Build.0 = Release|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Debug|x64.Build.0 = Debug|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Release|x64.ActiveCfg = Release|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Release|x64.Build.0 = Release|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E70FA64-0863-4A89-9B4D-AF9276B1B82C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://erastmorgan.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AMP.Tests\\AMP.Tests.csproj
+		SccProjectName1 = AMP.Tests
+		SccLocalPath1 = AMP.Tests
+		SccProjectUniqueName2 = AMP.WrapperForCLR\\AMP.WrapperForCLR.csproj
+		SccProjectName2 = AMP.WrapperForCLR
+		SccLocalPath2 = AMP.WrapperForCLR
+		SccProjectUniqueName3 = AMP\\AMP.vcxproj
+		SccProjectName3 = AMP
+		SccLocalPath3 = AMP
+		SccProjectUniqueName4 = D:\\NoiseDesigner\\NoiseDesigner.DataExchange\\NoiseDesigner.DataExchange.csproj
+		SccProjectName4 = ../NoiseDesigner/NoiseDesigner.DataExchange
+		SccLocalPath4 = D:\\NoiseDesigner\\NoiseDesigner.DataExchange
+	EndGlobalSection
+EndGlobal

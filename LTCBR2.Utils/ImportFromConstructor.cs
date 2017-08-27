@@ -23,8 +23,10 @@ namespace LTCBR2.Utils
 
         public Situation parsePps(RAXY.Situation.Situation situation)
         {
+            var counter = 0;
+
             var output = new Situation();
-            output.id = output.GetHashCode();
+            
             output.participants = new List<Participant>();
 
             foreach (var s in situation.Subjects)
@@ -52,8 +54,7 @@ namespace LTCBR2.Utils
                     attributes = lsa,
                     connections = new List<int>()
                 });
-                output.participants[output.participants.Count - 1].id =
-                    output.participants[output.participants.Count - 1].GetHashCode();
+                output.participants[output.participants.Count - 1].id = output.participants.Count - 1;
             }
 
             foreach (var p in situation.Processes)
@@ -77,8 +78,7 @@ namespace LTCBR2.Utils
                     attributes = lsa,
                     connections = new List<int>()
                 });
-                output.participants[output.participants.Count - 1].id =
-                    output.participants[output.participants.Count - 1].GetHashCode();
+                output.participants[output.participants.Count - 1].id = output.participants.Count - 1;
                 if (output.participants[output.participants.Count - 1].connections == null)
                     output.participants[output.participants.Count - 1].connections =
                         new List<int>();
@@ -110,8 +110,7 @@ namespace LTCBR2.Utils
                     attributes = lsa,
                     connections = new List<int>()
                 });
-                output.participants[output.participants.Count - 1].id =
-                    output.participants[output.participants.Count - 1].GetHashCode();
+                output.participants[output.participants.Count - 1].id = output.participants.Count - 1;
                 if (output.participants[output.participants.Count - 1].connections == null)
                     output.participants[output.participants.Count - 1].connections =
                         new List<int>();
@@ -126,6 +125,7 @@ namespace LTCBR2.Utils
                     }
                 }
             }
+            output.id = output.GetHashCode();
             return output;
         }
 

@@ -61,5 +61,21 @@ namespace LTCBR2.WebApi.Controllers
             }).ToList();
             return Ok(liteBundle);
         }
+
+        public IHttpActionResult GetListOfDevices()
+        {
+            //var gw = new GpuWorker();
+            return Ok(0);//gw.GetListOfDevices());
+        }
+
+        [HttpPost]
+        public HttpResponseMessage SetDevice([FromBody]string deviceName)
+        {
+            //var gw = new GpuWorker();
+            //gw.SetDevice(deviceName);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        
     }
 }

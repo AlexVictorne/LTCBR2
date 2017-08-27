@@ -4,6 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace LTCBR2.Types
 {
+    [Serializable]
     public class Situation
     {
         [BsonElement]

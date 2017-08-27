@@ -656,7 +656,12 @@ namespace LTCBR2Gpu {
 		return  result;
 	}
 
-
+	typedef struct Participant
+	{
+		cl_int id;
+		cl_int type;
+		cl_int purpose;
+	} Participant;
 	public ref class GpuWork
 	{
 	private:
@@ -782,6 +787,7 @@ namespace LTCBR2Gpu {
 			selectedDevice = devices[device];
 			free(devices);
 		}
+
 		cli::array<System::Double^>^ Initialization(void)
 		{
 			cl_device_id devices[] = { selectedDevice };
@@ -797,6 +803,8 @@ namespace LTCBR2Gpu {
 			//auto state = convertToString(filename, sourceStr);
 			//const char *source = sourceStr.c_str();
 			//
+
+			
 
 			const char *source = SysStringToChar(FileRead("HelloWorld_Kernel.cl"));
 			size_t sourceSize[] = { strlen(source) };
@@ -819,6 +827,7 @@ namespace LTCBR2Gpu {
 
 			// Device input buffers
 			cl_mem d_a;
+			cl_mem d_b;
 			// Device output buffer
 			cl_mem d_c;
 
@@ -836,6 +845,21 @@ namespace LTCBR2Gpu {
 				h_a[i] = i;
 			}
 
+
+			Participant* participants = new Participant[n];
+			for (i = 0; i < n; i++)
+			{
+				participants[i].id = 1;
+				participants[i].purpose = 2;
+				participants[i].type = 3;
+			}
+			d_b = clCreateBuffer(context, CL_MEM_READ_ONLY, sizeof(Participant)*n, NULL, NULL);
+			
+			clEnqueueWriteBuffer(commandQueue, d_b, CL_TRUE, 0, sizeof(Participant)*n, &participants, 0, NULL, NULL);
+			
+			clSetKernelArg(kernel, 1, sizeof(Participant)*n, &d_b);
+
+
 			d_a = clCreateBuffer(context, CL_MEM_READ_ONLY, bytes, NULL, NULL);
 			d_c = clCreateBuffer(context, CL_MEM_WRITE_ONLY, bytes, NULL, NULL);
 
@@ -843,7 +867,7 @@ namespace LTCBR2Gpu {
 			clEnqueueWriteBuffer(commandQueue, d_a, CL_TRUE, 0, bytes, h_a, 0, NULL, NULL);
 			// Set the arguments to our compute kernel
 			clSetKernelArg(kernel, 0, sizeof(cl_mem), &d_a);
-			clSetKernelArg(kernel, 1, sizeof(cl_mem), &d_c);
+			clSetKernelArg(kernel, 2, sizeof(cl_mem), &d_c);
 
 			//const char* input = "GdkknVnqkc";
 			//size_t strlength = strlen(input);
@@ -877,7 +901,6 @@ namespace LTCBR2Gpu {
 
 			return local;
 		}
-
 	};
 
 
